@@ -15,7 +15,7 @@ public class BookController {
     private BookService bookService;
 
     @PostMapping(value="/add")
-    public Book createTicket(@RequestBody Book book){
+    public Book createBook(@RequestBody Book book){
         return bookService.addBook(book);
     }
 
