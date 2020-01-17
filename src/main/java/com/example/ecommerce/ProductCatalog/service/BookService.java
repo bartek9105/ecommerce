@@ -1,7 +1,7 @@
-package com.example.ecommerce.service;
+package com.example.ecommerce.ProductCatalog.service;
 
-import com.example.ecommerce.dao.BookDao;
-import com.example.ecommerce.model.Book;
+import com.example.ecommerce.ProductCatalog.dao.BookDao;
+import com.example.ecommerce.ProductCatalog.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
