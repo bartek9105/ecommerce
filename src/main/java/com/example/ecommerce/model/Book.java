@@ -10,8 +10,8 @@ import java.util.Date;
 @Entity
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int bookId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer bookId;
     private String title;
     private String author;
     private BigDecimal price;

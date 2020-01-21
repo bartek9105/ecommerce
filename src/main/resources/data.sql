@@ -1,0 +1,1 @@
+INSERT INTO book (title, author, price) VALUES ('book1', 'author1', 34);
