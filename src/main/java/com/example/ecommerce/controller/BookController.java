@@ -5,7 +5,7 @@ import com.example.ecommerce.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.util.List;
 
 @RestController
 @RequestMapping(value="/api/books")
@@ -19,9 +19,9 @@ public class BookController {
         return bookService.addBook(book);
     }
 
-    @GetMapping(value="/book/{bookId}")
-    public Optional<Book> getBookById(@PathVariable("bookId") Integer bookId){
-        return bookService.getBookById(bookId);
+    @GetMapping(value="/all")
+    public List<Book> getBooks(){
+        return bookService.getAllBooks();
     }
 
 }

@@ -5,6 +5,7 @@ import com.example.ecommerce.model.Book;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -17,7 +18,7 @@ public class BookService {
         return bookDao.save(book);
     }
 
-    public Optional<Book> getBookById(Integer bookId) {
-        return bookDao.findById(bookId);
+    public List<Book> getAllBooks() {
+        return (List<Book>) bookDao.findAll();
     }
 }
