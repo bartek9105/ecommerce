@@ -1,4 +1,6 @@
-package com.example.ecommerce.Sales;
+package com.example.ecommerce.Sales.basket;
+
+import com.example.ecommerce.Sales.products.Product;
 
 public class Basket {
     public static Basket empty(){

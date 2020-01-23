@@ -1,6 +1,10 @@
 package com.example.ecommerce.Sales;
 
+import com.example.ecommerce.Sales.basket.Basket;
+import com.example.ecommerce.Sales.basket.BasketStorage;
 import com.example.ecommerce.Sales.exceptions.NoSuchProductException;
+import com.example.ecommerce.Sales.products.Product;
+import com.example.ecommerce.Sales.products.ProductCatalog;
 
 public class SalesFacade {
 

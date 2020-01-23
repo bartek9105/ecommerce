@@ -1,4 +1,4 @@
-package com.example.ecommerce.Sales;
+package com.example.ecommerce.Sales.products;
 
 import java.util.ArrayList;
 import java.util.List;

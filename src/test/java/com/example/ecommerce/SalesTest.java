@@ -2,6 +2,10 @@ package com.example.ecommerce;
 
 import com.example.ecommerce.Sales.*;
 
+import com.example.ecommerce.Sales.basket.Basket;
+import com.example.ecommerce.Sales.basket.InMemoryBasketStorage;
+import com.example.ecommerce.Sales.products.InMemoryProductCatalog;
+import com.example.ecommerce.Sales.products.Product;
 import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.Test;
 
