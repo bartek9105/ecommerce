@@ -1,5 +1,10 @@
 let book = [];
 const container = document.querySelector(".card-group");
+const cart = document.querySelector(".list-group");
+
+document.querySelector(".cart-icon").addEventListener('click', () => {
+    cart.classList.toggle("toggle-display");
+})
 
 async function getProducts(){
     try{
