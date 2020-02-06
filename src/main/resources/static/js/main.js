@@ -1,7 +1,5 @@
 let book = [];
-const list = document.querySelector('.list-group');
-const listElement = document.createElement('li');
-listElement.classList.add("list-group-item");
+const container = document.querySelector(".card-group");
 
 async function getProducts(){
     try{
@@ -14,9 +12,18 @@ async function getProducts(){
 
 function displayProducts(books){
     books.forEach(book => {
-        let data = `Title: ${book.title}, Author: ${book.author}, Price: ${book.price}`;
-        listElement.appendChild(document.createTextNode(data))
-        list.appendChild(listElement);
+        let template = `
+            <div class="card col-sm-4" style="width: 18rem;">
+                <img src="${book.cover}" class="card-img-top" alt="cover">
+                <div class="card-body">
+                    <h3 class="card-title">${book.title}</h3>
+                    <h4 class="card-title">${book.author}</h4>
+                    <h5 class="card-title">${book.price} PLN</h5>
+                    <a href="#" class="btn btn-primary">Add to basket</a>
+                </div>
+            </div>
+        `
+        container.insertAdjacentHTML("beforeend", template);
     })
 
 }
