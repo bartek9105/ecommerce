@@ -1,13 +1,7 @@
-package com.example.ecommerce;
+package com.example.ecommerce.Sales;
 
-import com.example.ecommerce.Sales.*;
-
-import com.example.ecommerce.Sales.basket.Basket;
-import com.example.ecommerce.Sales.basket.InMemoryBasketStorage;
-import com.example.ecommerce.Sales.products.InMemoryProductCatalog;
-import com.example.ecommerce.Sales.products.Product;
-import org.aspectj.lang.annotation.Before;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.util.Arrays;

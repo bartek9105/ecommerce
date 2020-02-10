@@ -1,6 +1,6 @@
 package com.example.ecommerce.Sales;
 
 @FunctionalInterface
-interface SystemUserContext {
+public interface SystemUserContext {
     public String getCurrentUserId();
 }
