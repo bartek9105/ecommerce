@@ -1,4 +1,4 @@
-package com.example.ecommerce.Sales;
+package com.example.ecommerce.sales.products;
 
 import java.util.Optional;
 

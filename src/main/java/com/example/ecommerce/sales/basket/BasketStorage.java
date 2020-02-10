@@ -1,4 +1,4 @@
-package com.example.ecommerce.Sales;
+package com.example.ecommerce.sales.basket;
 
 import java.util.Optional;
 

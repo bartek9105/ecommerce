@@ -1,6 +1,10 @@
-package com.example.ecommerce.Sales;
+package com.example.ecommerce.sales;
 
-import com.example.ecommerce.Sales.exceptions.NoSuchProductException;
+import com.example.ecommerce.sales.basket.Basket;
+import com.example.ecommerce.sales.basket.BasketStorage;
+import com.example.ecommerce.sales.exceptions.NoSuchProductException;
+import com.example.ecommerce.sales.products.Product;
+import com.example.ecommerce.sales.products.ProductCatalog;
 
 public class SalesFacade {
 
@@ -21,7 +25,7 @@ public class SalesFacade {
                 Basket.empty()
         );
         Product product = productCatalog.load(productId)
-                .orElseThrow(() -> new NoSuchProductException());
+                .orElseThrow(NoSuchProductException::new);
 
         basket.addProduct(product);
 
@@ -31,9 +35,7 @@ public class SalesFacade {
     public Basket getBasket(){
         String currentClientId = systemUserContext.getCurrentUserId();
 
-        Basket basket = basketStorage.loadForUser(currentClientId)
+        return basketStorage.loadForUser(currentClientId)
                 .orElse(Basket.empty());
-
-        return basket;
     }
 }

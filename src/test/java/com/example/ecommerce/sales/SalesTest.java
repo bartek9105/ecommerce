@@ -1,5 +1,9 @@
-package com.example.ecommerce.Sales;
+package com.example.ecommerce.sales;
 
+import com.example.ecommerce.sales.basket.Basket;
+import com.example.ecommerce.sales.basket.InMemoryBasketStorage;
+import com.example.ecommerce.sales.products.InMemoryProductCatalog;
+import com.example.ecommerce.sales.products.Product;
 import org.junit.Before;
 import org.junit.Test;
 
