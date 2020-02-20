@@ -36,3 +36,5 @@ function displayProducts(books){
 window.addEventListener('DOMContentLoaded', () => {
     getProducts().then(books => displayProducts(books));
 });
+
+console.log("jp")
