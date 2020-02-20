@@ -14,7 +14,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class SalesTest {
 
-    private final Long PRODUCT_ID = 1000L;
+    private final String PRODUCT_ID = "1000";
     private String currentUserId;
     private InMemoryProductCatalog productCatalog;
 
@@ -35,7 +35,7 @@ public class SalesTest {
         assertThat(basket.productsCount()).isEqualTo(1);
     }
 
-    private void thereIsProductAvailableInCatalog(Long productId) {
+    private void thereIsProductAvailableInCatalog(String productId) {
         this.productCatalog.setAvailableProducts(Arrays.asList(new Product(productId, BigDecimal.valueOf(10.0))));
     }
 

@@ -24,13 +24,17 @@ function displayProducts(books){
                     <h3 class="card-title">${book.title}</h3>
                     <h4 class="card-title">${book.author}</h4>
                     <h5 class="card-title">${book.price} PLN</h5>
-                    <a href="#" class="btn btn-primary">Add to basket</a>
+                    <a href="#" book-id="${book.bookId}" class="btn btn-primary" onclick="addToBasket(${book.bookId})">
+                    Add to basket </a>
                 </div>
             </div>
         `
         container.insertAdjacentHTML("beforeend", template);
     })
+}
 
+function addToBasket(id){
+    axios.post('/api/add-to-basket/{id}').then(res => console.log(res)).catch(err => console.log(err))
 }
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -15,7 +15,7 @@ public class SalesController {
     private SalesFacade salesFacade;
 
     @PostMapping("/add-to-basket/{id}")
-    public String addProductToBasket(@PathVariable(value="id") Long productId){
+    public String addProductToBasket(@PathVariable(value="id") String productId){
         try{
             salesFacade.addToBasket(productId);
             return "it works";

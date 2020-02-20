@@ -18,7 +18,7 @@ public class SalesFacade {
         this.productCatalog = productCatalog;
     }
 
-    public void addToBasket(Long productId){
+    public void addToBasket(String productId){
         String currentClientId = systemUserContext.getCurrentUserId();
 
         Basket basket = basketStorage.loadForUser(currentClientId).orElse(
@@ -29,13 +29,12 @@ public class SalesFacade {
 
         basket.addProduct(product);
 
-        basketStorage.save(basket);
+        basketStorage.save(currentClientId, basket);
     }
 
     public Basket getBasket(){
         String currentClientId = systemUserContext.getCurrentUserId();
 
-        return basketStorage.loadForUser(currentClientId)
-                .orElse(Basket.empty());
+        return basketStorage.loadForUser(currentClientId).orElse(Basket.empty());
     }
 }

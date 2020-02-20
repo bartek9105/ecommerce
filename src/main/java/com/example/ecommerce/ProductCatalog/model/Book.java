@@ -10,17 +10,17 @@ import java.math.BigDecimal;
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer bookId;
+    private String bookId;
     private String title;
     private String author;
     private BigDecimal price;
     private String cover;
 
-    public Integer getBookId() {
+    public String getBookId() {
         return bookId;
     }
 
-    public void setBookId(Integer bookId) {
+    public void setBookId(String bookId) {
         this.bookId = bookId;
     }
 

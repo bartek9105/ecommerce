@@ -1,15 +1,22 @@
 package com.example.ecommerce.sales.basket;
 
 import java.util.Optional;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class InMemoryBasketStorage implements BasketStorage{
-    @Override
-    public Optional<Basket> loadForUser(String currentClientId){
-        return Optional.of(null);
+    private final ConcurrentHashMap<String, Basket> baskets;
+
+    public InMemoryBasketStorage() {
+        this.baskets = new ConcurrentHashMap<>();
     }
 
     @Override
-    public void save(Basket basket){
+    public Optional<Basket> loadForUser(String currentClientId) {
+        return Optional.ofNullable(baskets.get(currentClientId));
+    }
 
+    @Override
+    public void save(String clientId, Basket basket) {
+        baskets.put(clientId, basket);
     }
 }

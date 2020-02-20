@@ -5,5 +5,5 @@ import java.util.Optional;
 public interface BasketStorage {
     Optional<Basket> loadForUser(String currentClientId);
 
-    void save(Basket basket);
+    void save(String clientId, Basket basket);
 }
