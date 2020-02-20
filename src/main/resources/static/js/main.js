@@ -34,7 +34,7 @@ function displayProducts(books){
 }
 
 function addToBasket(id){
-    axios.post('/api/add-to-basket/{id}').then(res => console.log(res)).catch(err => console.log(err))
+    axios.post('/api/add-to-basket/${id}').then(res => console.log(res)).catch(err => console.log(err))
 }
 
 window.addEventListener('DOMContentLoaded', () => {
