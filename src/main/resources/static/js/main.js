@@ -40,5 +40,3 @@ function addToBasket(id){
 window.addEventListener('DOMContentLoaded', () => {
     getProducts().then(books => displayProducts(books));
 });
-
-console.log("jp")

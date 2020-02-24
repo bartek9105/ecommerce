@@ -1,24 +1,21 @@
-package com.example.ecommerce.sales;
+package com.example.ecommerce.sales.snv;
 
 import com.example.ecommerce.sales.exceptions.NoSuchProductException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping(value="/api/basket")
 public class SalesController {
 
     @Autowired
     private SalesFacade salesFacade;
 
-    @PostMapping("/add-to-basket/{id}")
+    @PostMapping(value="/add-to-basket/{id}")
     public String addProductToBasket(@PathVariable(value="id") String productId){
         try{
             salesFacade.addToBasket(productId);
-            return "it works";
+            return "added to basket";
         }catch (NoSuchProductException e){
             return "doesnt work";
         }

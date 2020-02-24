@@ -1,4 +1,4 @@
-package com.example.ecommerce.sales;
+package com.example.ecommerce.sales.snv;
 
 import com.example.ecommerce.sales.basket.Basket;
 import com.example.ecommerce.sales.basket.BasketStorage;

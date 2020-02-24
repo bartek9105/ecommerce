@@ -5,6 +5,7 @@ import com.example.ecommerce.sales.basket.Basket;
 import com.example.ecommerce.sales.basket.InMemoryBasketStorage;
 import com.example.ecommerce.sales.products.InMemoryProductCatalog;
 import com.example.ecommerce.sales.products.Product;
+import com.example.ecommerce.sales.snv.SalesFacade;
 import org.junit.Before;
 import org.junit.Test;
 
