@@ -5,6 +5,7 @@ import com.example.ecommerce.sales.basket.BasketStorage;
 import com.example.ecommerce.sales.exceptions.NoSuchProductException;
 import com.example.ecommerce.sales.products.Product;
 import com.example.ecommerce.sales.products.ProductCatalog;
+import com.example.ecommerce.system.SystemUserContext;
 
 public class SalesFacade {
 

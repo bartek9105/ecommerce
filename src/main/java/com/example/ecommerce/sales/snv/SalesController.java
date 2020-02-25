@@ -5,13 +5,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping(value="/api/basket")
+@RequestMapping("/api/basket")
 public class SalesController {
 
     @Autowired
     private SalesFacade salesFacade;
 
-    @PostMapping(value="/add-to-basket/{id}")
+    @PostMapping("/add-to-basket/{id}")
     public String addProductToBasket(@PathVariable(value="id") String productId){
         try{
             salesFacade.addToBasket(productId);

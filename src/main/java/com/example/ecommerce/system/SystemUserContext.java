@@ -1,4 +1,4 @@
-package com.example.ecommerce.sales.snv;
+package com.example.ecommerce.system;
 
 @FunctionalInterface
 public interface SystemUserContext {
