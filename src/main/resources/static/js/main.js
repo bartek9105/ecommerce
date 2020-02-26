@@ -35,25 +35,28 @@ function displayProducts(books){
 
 async function addToBasket(id){
     try{
-        axios.post(`api/basket/add-to-basket/${id}`)
-            .then(res => console.log(res))
+        await axios.post(`api/basket/add-to-basket/${id}`)
+        getBasket();
     }catch(err){
         console.log(err)
     }
 }
-
 
 async function getBasket(){
     try{
         const res = await axios.get('/api/basket/get-basket')
-        return res.data
+        let items = res.data.reservedProducts
+        console.log(items)
     }catch(err){
         console.log(err)
     }
 }
 
-function displayBasket(){
-
+function displayBasket(item){
+        let template = `
+            <li class="list-group-item">Id: ${item.id} | Quantity: ${item.quantity} | Price: ${item.price}</li>
+        `
+        cart.insertAdjacentHTML("beforeend", template)
 }
 
 window.addEventListener('DOMContentLoaded', () => {

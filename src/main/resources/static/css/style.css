@@ -1,7 +1,15 @@
+.navbar{
+    position: relative;
+}
+
 .toggle-display{
     display: none;
 }
 
 .shopping-cart{
     cursor: pointer;
+}
+
+.list-group{
+    position: absolute;
 }
