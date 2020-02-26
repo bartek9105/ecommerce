@@ -33,8 +33,27 @@ function displayProducts(books){
     })
 }
 
-function addToBasket(id){
-    axios.post('/api/basket/add-to-basket/${id}').then(res => console.log(res)).catch(err => console.log(err))
+async function addToBasket(id){
+    try{
+        axios.post(`api/basket/add-to-basket/${id}`)
+            .then(res => console.log(res))
+    }catch(err){
+        console.log(err)
+    }
+}
+
+
+async function getBasket(){
+    try{
+        const res = await axios.get('/api/basket/get-basket')
+        return res.data
+    }catch(err){
+        console.log(err)
+    }
+}
+
+function displayBasket(){
+
 }
 
 window.addEventListener('DOMContentLoaded', () => {

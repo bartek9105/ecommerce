@@ -6,4 +6,5 @@ public interface BasketStorage {
     Optional<Basket> loadForUser(String currentClientId);
 
     void save(String clientId, Basket basket);
+
 }
