@@ -1,5 +1,6 @@
 package com.example.ecommerce.sales.snv;
 
+import com.example.ecommerce.ProductCatalog.model.Book;
 import com.example.ecommerce.sales.basket.Basket;
 import com.example.ecommerce.sales.basket.BasketStorage;
 import com.example.ecommerce.sales.exceptions.NoSuchProductException;
@@ -25,7 +26,7 @@ public class SalesFacade {
         Basket basket = basketStorage.loadForUser(currentClientId).orElse(
                 Basket.empty()
         );
-        Product product = productCatalog.load(productId)
+        Book product = productCatalog.load(productId)
                 .orElseThrow(NoSuchProductException::new);
 
         basket.addProduct(product);

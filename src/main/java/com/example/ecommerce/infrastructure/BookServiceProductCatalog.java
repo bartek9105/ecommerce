@@ -1,5 +1,6 @@
 package com.example.ecommerce.infrastructure;
 
+import com.example.ecommerce.ProductCatalog.model.Book;
 import com.example.ecommerce.ProductCatalog.service.BookService;
 import com.example.ecommerce.sales.products.Product;
 import com.example.ecommerce.sales.products.ProductCatalog;
@@ -16,7 +17,9 @@ public class BookServiceProductCatalog implements ProductCatalog {
     }
 
     @Override
-    public Optional<Product> load(String productId) {
-        return Optional.empty();
+    public Optional<Book> load(String productId) {
+        return bookService.getAllBooks().stream()
+                .filter(product -> product.getBookId().equals(productId))
+                .findFirst();
     }
 }
