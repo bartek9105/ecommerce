@@ -12,4 +12,6 @@
 
 .list-group{
     position: absolute;
+    right: 100px;
+    z-index: 1;
 }

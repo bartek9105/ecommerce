@@ -53,13 +53,14 @@ async function getBasket(){
 }
 
 function displayBasket(items){
-        let template
+        let templateCart
         items.forEach(item => {
-            template = `
-            <li class="list-group-item">Id: ${item.id} | Quantity: ${item.quantity} | Price: ${item.price}</li>
+            templateCart += `
+                <li class="list-group-item">Quantity: ${item.quantity} | Price: ${item.price}</li>
             `
+            cart.innerHTML = templateCart
         })
-        cart.insertAdjacentHTML("beforeend", template)
+
 }
 
 window.addEventListener('DOMContentLoaded', () => {
