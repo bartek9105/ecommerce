@@ -46,16 +46,19 @@ async function getBasket(){
     try{
         const res = await axios.get('/api/basket/get-basket')
         let items = res.data.reservedProducts
-        console.log(items)
+        displayBasket(items)
     }catch(err){
         console.log(err)
     }
 }
 
-function displayBasket(item){
-        let template = `
+function displayBasket(items){
+        let template
+        items.forEach(item => {
+            template = `
             <li class="list-group-item">Id: ${item.id} | Quantity: ${item.quantity} | Price: ${item.price}</li>
-        `
+            `
+        })
         cart.insertAdjacentHTML("beforeend", template)
 }
 
