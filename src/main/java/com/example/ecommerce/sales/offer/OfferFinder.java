@@ -1,5 +1,6 @@
 package com.example.ecommerce.sales.offer;
 
+import com.example.ecommerce.sales.basket.Basket;
 import com.example.ecommerce.sales.basket.BasketStorage;
 import com.example.ecommerce.system.SystemUserContext;
 
@@ -16,7 +17,9 @@ public class OfferFinder {
 
     public OfferData currentOffer(){
         Offer offer = offerMaker.calculateOffer(
-                basketStorage.loadForUser(userContext.getCurrentUserId()),
+                basketStorage.loadForUser(userContext.getCurrentUserId())
+                        .orElse(Basket.empty())
+                        .getReservedProducts(),
                 DiscountFactory.quantityDiscount()
         );
 
