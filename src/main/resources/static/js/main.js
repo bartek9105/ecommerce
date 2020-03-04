@@ -60,7 +60,22 @@ function displayBasket(items){
             `
             cart.innerHTML = templateCart
         })
+        cart.insertAdjacentHTML("beforeend", `
+                <a href="#" class="btn btn-primary">Checkout</a>
+                <a href="#" class="btn btn-primary">Clear all</a>
+            `);
+        getOffer()
 
+}
+
+async function getOffer(){
+    try{
+        let res = await axios.get('/api/offer')
+        let offerTemplate = `Total value: ${res.data.total.toFixed(2)} ${res.data.currency}`
+        cart.insertAdjacentHTML("beforeend", offerTemplate)
+    }catch(err){
+        console.log(err)
+    }
 }
 
 window.addEventListener('DOMContentLoaded', () => {
