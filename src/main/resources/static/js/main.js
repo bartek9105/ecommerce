@@ -61,8 +61,9 @@ function displayBasket(items){
             cart.innerHTML = templateCart
         })
         cart.insertAdjacentHTML("beforeend", `
-                <a href="#" class="btn btn-primary">Checkout</a>
-                <a href="#" class="btn btn-primary">Clear all</a>
+                <div class="btn-container d-flex justify-content-between">
+                    <a href="#" class="btn btn-primary">Checkout</a>
+                </div>
             `);
         getOffer()
 
@@ -71,8 +72,17 @@ function displayBasket(items){
 async function getOffer(){
     try{
         let res = await axios.get('/api/offer')
-        let offerTemplate = `Total value: ${res.data.total.toFixed(2)} ${res.data.currency}`
+        let offerTemplate = `<p class="mt-4"> Total value: <span class="font-weight-bold">${res.data.total.toFixed(2)} </span> ${res.data.currency} </p>`
         cart.insertAdjacentHTML("beforeend", offerTemplate)
+    }catch(err){
+        console.log(err)
+    }
+}
+
+async function clearBasket(){
+    try{
+        await axios.get('/api/basket/clear-basket')
+        getBasket()
     }catch(err){
         console.log(err)
     }

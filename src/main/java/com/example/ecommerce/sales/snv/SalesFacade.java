@@ -38,4 +38,12 @@ public class SalesFacade {
 
         return basketStorage.loadForUser(currentClientId).orElse(Basket.empty());
     }
+
+    public void clearBasket(){
+        String currentClientId = systemUserContext.getCurrentUserId();
+        Basket basket = basketStorage.loadForUser(currentClientId).orElse(
+                Basket.empty()
+        );
+        basket.clear();
+    }
 }

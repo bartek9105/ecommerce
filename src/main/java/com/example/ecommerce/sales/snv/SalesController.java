@@ -26,4 +26,10 @@ public class SalesController {
     public Basket getCart(){
         return salesFacade.getBasket();
     }
+
+    @GetMapping("/clear-basket")
+    public void clearBasket(){
+        salesFacade.clearBasket();
+    }
+
 }
