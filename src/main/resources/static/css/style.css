@@ -14,4 +14,7 @@
     position: absolute;
     right: 100px;
     z-index: 1;
+    background-color: #ccc;
+    border: 1px solid #000;
+    border-radius: 5px;
 }
